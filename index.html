@@ -4,32 +4,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTW App Template</title>
-    <!--
-        The tailwind CDN is designed for development purposes only, and is not the best choice for production.
-        Read more here: https://tailwindcss.com/docs/installation 
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- example for dark theme styling when using tailwind cdn -->
-    <style>
-        /*examples for dark/light themes*/
-        .dark .dark\:text-white {
-            color: #fff;
-        }
-        .dark .dark\:bg-gray-800 {
-            background-color: #1f2937;
-        }
-        .light .light\:text-black {
-            color: #000;
-        }
+    <title>Calculator</title>
 
-        /*add your custom css rules here*/
-    </style>
-</head>
+    <!DOCTYPE html>
+    <html lang="en">
+        <title>Calculator</title>
+        <style>
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: #333;
+                color: white;
+                width: 100%;
+            }
 
-<body class="dark:text-white light:text-black">
+            .calculator {
+                width: 240px;
+                margin: 40px auto;
+                background-color: gray;
+                padding: 20px;
+                border-radius: 10px;
+                border-style: solid;
+                text-align: center;
+                position: fixed;
+                border-color: black;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 10px;
+                border: 2px solid #4f4141;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            .button {
+                width: 100%;
+                margin: 5px;
+                background-color: orangered;
+                border: 2px solid black;
+                text-align: center;
+                padding: 10px 0;
+                border-radius: 10px;
+                cursor: pointer;
+            }
 
-    <!-- your app code goes here -->
+            .operator {
+                width: 100%;
+                margin: 5px;
+                background-color: whitesmoke;
+                border: 2px solid blue;
+                text-align: center;
+                padding: 10px 0;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+    
+            .row {
+                grid-column: span 4;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 10px;
+            }
+
+            .result {
+                grid-column: span 4;
+                width: 100%;
+                height: 40px;
+                border-color: black;
+            }
+        </style>
+    </head>
+    
+    <body class="dark:text-white light:text-black">
+        <header>
+            <h1>Calculator</h1>
+        </header>
+        <div class="calculator">
+            <input type="text" class="result" readonly>
+            <div class="row">
+                <div class="operator">AC</div>
+                <div class="operator">-</div>
+                <div class="operator">+</div>
+                <div class="operator">x</div>
+            </div>
+    
+            <div class="row">
+                <div class="button">7</div>
+                <div class="button">8</div>
+                <div class="button">9</div>
+                <div class="operator">/</div>
+                
+            </div>
+    
+            <div class="row">
+                <div class="button">4</div>
+                <div class="button">5</div>
+                <div class="button">6</div>
+                
+            </div>
+    
+            <div class="row">
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+                
+            </div>
+    
+            <div class="row">
+                <div class="operator">=</div>
+                <div class="button">0</div>
+            </div>
+        </div>
+    
+
 
     <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
     <script>
